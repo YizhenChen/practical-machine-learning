@@ -144,6 +144,13 @@ Random Forest : 0.9963
 Decision Trees : 0.7368  
 Generalized Boosted Model : 0.9839  
 
+### Cross Validation and Estimation of Out-of-Sample Error
+
+```{r}
+pred <- predict(modFitRandForest, newdata=TestSet)
+accuracy <- sum(pred == TestSet$classe)/length(pred) 
+error <- 1-accuracy
+```
 
 ### Apply to the test data
 
